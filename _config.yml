@@ -8,9 +8,9 @@ url: "https://4mitSurya.github.io"
 remote_theme: LeNPaul/lagrange
 
 plugins:
+  - jekyll-remote-theme
   - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-remote-theme
 
 markdown: kramdown
 
