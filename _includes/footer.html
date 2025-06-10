@@ -1,0 +1,14 @@
+<hr>
+<p>© {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+
+<p>
+  {% if site.social.github %}
+    <a href="https://github.com/{{ site.social.github }}" target="_blank">GitHub</a>
+  {% endif %}
+  {% if site.social.linkedin %}
+    | <a href="https://linkedin.com/in/{{ site.social.linkedin }}" target="_blank">LinkedIn</a>
+  {% endif %}
+  {% if site.social.email %}
+    | <a href="mailto:{{ site.social.email }}">Email</a>
+  {% endif %}
+</p>
