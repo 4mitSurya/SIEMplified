@@ -1,0 +1,26 @@
+<label for="tag-filter">Filter by tag:</label>
+<select id="tag-filter" onchange="filterPosts()">
+  <option value="all">All</option>
+  {% assign all_tags = site.posts | map: 'tags' | join: ',' | split: ',' | uniq | sort %}
+  {% for tag in all_tags %}
+    {% if tag != "" %}
+      <option value="{{ tag | strip }}">{{ tag | capitalize }}</option>
+    {% endif %}
+  {% endfor %}
+</select>
+
+<script>
+function filterPosts() {
+  var select = document.getElementById('tag-filter');
+  var selectedTag = select.value;
+  var posts = document.querySelectorAll('.post-item');
+  posts.forEach(function(post) {
+    var tags = post.getAttribute('data-tags').split(',');
+    if (selectedTag === 'all' || tags.includes(selectedTag)) {
+      post.style.display = '';
+    } else {
+      post.style.display = 'none';
+    }
+  });
+}
+</script>
