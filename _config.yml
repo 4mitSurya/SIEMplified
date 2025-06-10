@@ -2,10 +2,9 @@ title: SIEMplified
 #email: youremail@example.com
 description: >-
   A blog dedicated to simplifying SIEM technologies.
-baseurl: "/SIEMPlified"
+baseurl: "/SIEMplified"
 url: "https://4mitSurya.github.io"
 
-theme: lagrange
 remote_theme: LeNPaul/lagrange
 
 plugins:
