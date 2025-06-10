@@ -1,26 +1,27 @@
 <label for="tag-filter">Filter by tag:</label>
 <select id="tag-filter" onchange="filterPosts()">
   <option value="all">All</option>
-  {% assign all_tags = site.posts | map: 'tags' | join: ',' | split: ',' | uniq | sort %}
-  {% for tag in all_tags %}
-    {% if tag != "" %}
-      <option value="{{ tag | strip }}">{{ tag | capitalize }}</option>
+  {% assign tag_list = site.posts | map: "tags" | join: "," | split: "," | uniq | sort %}
+  {% for tag in tag_list %}
+    {% assign clean_tag = tag | strip %}
+    {% if clean_tag != "" %}
+      <option value="{{ clean_tag | downcase }}">{{ clean_tag | capitalize }}</option>
     {% endif %}
   {% endfor %}
 </select>
 
 <script>
 function filterPosts() {
-  var select = document.getElementById('tag-filter');
-  var selectedTag = select.value;
-  var posts = document.querySelectorAll('.post-item');
-  posts.forEach(function(post) {
-    var tags = post.getAttribute('data-tags').split(',');
-    if (selectedTag === 'all' || tags.includes(selectedTag)) {
-      post.style.display = '';
-    } else {
-      post.style.display = 'none';
-    }
+  const selectedTag = document.getElementById('tag-filter').value.toLowerCase();
+  const posts = document.querySelectorAll('.post-item');
+
+  posts.forEach(post => {
+    const tagAttr = post.getAttribute('data-tags');
+    if (!tagAttr) return; // Skip if no tags
+
+    const tags = tagAttr.split(',').map(t => t.trim().toLowerCase());
+    const show = selectedTag === 'all' || tags.includes(selectedTag);
+    post.style.display = show ? '' : 'none';
   });
 }
 </script>
