@@ -14,7 +14,7 @@ Welcome to **SIEMplified**, your go-to blog for simplifying SIEM technologies in
 <ul>
 {% for post in site.posts %}
   <li class="post-item" data-tags="{{ post.tags | join: ',' }}">
-    <a href="{{ post.url }}">{{ post.title }}</a> — {{ post.date | date: "%b %-d, %Y" }}
+    <a href="{{ post.url }}">{{ post.title }}</a> â€” {{ post.date | date: "%b %-d, %Y" }}
 
     {% assign words = post.content | number_of_words %}
     {% assign reading_time = words | divided_by: 200 %}
