@@ -1,0 +1,22 @@
+title: SIEMplified
+#email: youremail@example.com
+description: >-
+  A blog dedicated to simplifying SIEM technologies.
+baseurl: "/SIEMPlified"
+url: "https://username.github.io"
+
+theme: lagrange
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+markdown: kramdown
+
+author:
+  name: Your Name
+
+social:
+  github: yourgithubusername
+  linkedin: yourlinkedinusername
+  email: youremail@example.com
