@@ -6,10 +6,12 @@ baseurl: "/SIEMPlified"
 url: "https://username.github.io"
 
 theme: lagrange
+remote_theme: LeNPaul/lagrange
 
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-remote-theme
 
 markdown: kramdown
 
