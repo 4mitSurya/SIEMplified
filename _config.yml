@@ -3,7 +3,7 @@ title: SIEMplified
 description: >-
   A blog dedicated to simplifying SIEM technologies.
 baseurl: "/SIEMPlified"
-url: "https://username.github.io"
+url: "https://4mitSurya.github.io"
 
 theme: lagrange
 remote_theme: LeNPaul/lagrange
